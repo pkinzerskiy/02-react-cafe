@@ -10,7 +10,6 @@ import type { VoteType, Votes } from './../../types/votes';
 
 
 export default function App() {
-    const [onWatch, setOnWatch] = useState(false);
     const [votes,  setVotes] = useState<Votes>({
         good: 0,
         neutral: 0,
@@ -19,8 +18,7 @@ export default function App() {
 
 
     const handleVote = (type: VoteType) => {
-        setOnWatch(!false);
-        console.log("votes:", votes, type);
+
         setVotes(() => ({
            ...votes,
         [type]: votes[type] + 1,
@@ -28,7 +26,7 @@ export default function App() {
     };
 
       const resetVotes = () => {
-        setOnWatch(false);
+
         setVotes(() => ({
             good: 0,
             neutral: 0,
